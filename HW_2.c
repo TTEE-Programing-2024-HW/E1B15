@@ -15,27 +15,27 @@ int main(void)
 	
 	
 	for( i=0;i<3;i++){
-	printf("½Ð¿é¤J±K½X");
+	printf("è«‹è¼¸å…¥å¯†ç¢¼");
 	scanf("%d",&password);
 	if(password==2024){
-		printf("±K½X¥¿½T\n");
+		printf("å¯†ç¢¼æ­£ç¢º\n");
 		break;
 	}else{
-		printf("±K½X¿ù»~\n");	
+		printf("å¯†ç¢¼éŒ¯èª¤\n");	
 	}
 	}
 	system("cls");
 	while(1){ 
 	
 	printf("________________________\n");
-	printf("| a.µe¥Xª½¨¤¤T¨¤§Î     |\n");
-	printf("| b.Åã¥Ü­¼ªkªí         |\n");	
-	printf("| c.µ²§ô               |\n");
+	printf("| a.ç•«å‡ºç›´è§’ä¸‰è§’å½¢     |\n");
+	printf("| b.é¡¯ç¤ºä¹˜æ³•è¡¨         |\n");	
+	printf("| c.çµæŸ               |\n");
 	printf("________________________\n");
 	input=getch();
 	
 	if(input=='a'||input=='A'){
-		printf("½Ð¿é¤J¦r¥À\n");
+		printf("è«‹è¼¸å…¥å­—æ¯\n");
 		ch=getch();
 		
 		if(ch>='a'&&ch<='n'){
@@ -64,7 +64,7 @@ int main(void)
 }
 	if(input=='b'||input=='B'){
 		while(1){
-		printf("½Ð¿é¤J1¨ì9ªº¾ã¼Æ\n");
+		printf("è«‹è¼¸å…¥1åˆ°9çš„æ•´æ•¸\n");
 		scanf("%d",&num);
 		if(num<=9&&num>=1){
 		for(i=1;i<=num;i++){
@@ -77,7 +77,7 @@ int main(void)
 			system("cls");
 			break;
 	}else{
-	printf("½Ð¿é¤J¥¿½T¼Æ¦r\n");	
+	printf("è«‹è¼¸å…¥æ­£ç¢ºæ•¸å­—\n");	
 	}
 }
 }
@@ -94,9 +94,11 @@ int main(void)
 		else if(ch2=='n'||ch2=='N'){
 			return 0;
 		}else{
-			printf("¥X²{¿ù»~½Ð­«·s¿é¤J\n");
+			printf("å‡ºç¾éŒ¯èª¤è«‹é‡æ–°è¼¸å…¥\n");
 		}
 		}
 	}
 }
 }
+//é€™æ¬¡ä½œæ¥­è®“æˆ‘å°è¿´åœˆå¾—æ‡‰ç”¨æ›´åŠ ç†Ÿç·´ï¼ŒåŒæ™‚å°æ–¼getchçš„ä½¿ç”¨ä¹Ÿæœ‰æ›´æ·±å…¥çš„äº†è§£
+//å°æ–¼ä¹‹å¾Œæ‰“å…¶ä»–çš„ç¨‹å¼ä¹Ÿæœƒæœ‰å¾ˆå¤§çš„å¹«åŠ© 
