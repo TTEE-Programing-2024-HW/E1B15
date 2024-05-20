@@ -27,12 +27,7 @@ int main() {
 	
 }
 system("cls");*/
-printf("--------[BookingSystem]--------\n");
-printf("     | a. Available seats    |\n");
-printf("     | b. Arrange for you    |\n");
-printf("     | c. Choose by yourself |\n");
-printf("     | d. Exit               |\n");
-printf(" ------------------------------\n");
+
 	for(i=0;i<9;i++){
 			for(j=0;j<9;j++){
 				seat[i][j]='-';
@@ -45,7 +40,13 @@ printf(" ------------------------------\n");
                 seat[row][cul] = '*';
                 reserv++;}}
 while(1){
-	scanf("%c",&word);
+printf("--------[BookingSystem]--------\n");
+printf("     | a. Available seats    |\n");
+printf("     | b. Arrange for you    |\n");
+printf("     | c. Choose by yourself |\n");
+printf("     | d. Exit               |\n");
+printf(" ------------------------------\n");
+scanf(" %c",&word);
 	
 	
 	if(word=='a'||word=='A'){
@@ -165,6 +166,23 @@ break;
 }
   }break;}
     
+}
+//d
+if(word=='d'||word=='D'){
+	char yn;
+	printf("continue(y/n)\n");
+	while(1){
+		scanf(" %c",&yn);
+	if(yn=='y'||yn=='Y'){
+		return 0;
+	}else if(yn=='n'||yn=='N'){
+		break;
+		
+	}else{
+		printf("¿ù»~\n");
+		continue;
+	}
+	}
 }
 }return 0;}
 
