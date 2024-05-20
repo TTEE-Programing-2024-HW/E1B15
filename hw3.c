@@ -2,10 +2,11 @@
 #include<stdlib.h>
 
 int main() {
-    int i,j,password=2024,password1,reserv=0;
+    int i,j,namber,seatcarreat,password=2024,password1,canseat=1,reserv=0;
     char word;
     char seat[9][9];
-    printf("   /\\_/\\  \n");
+    srand(time(NULL));
+    /*printf("   /\\_/\\  \n");
     printf("  / o o \\ \n");
     printf(" (   \"   )\n");
     printf("  \\~(*)~/ \n");
@@ -25,37 +26,98 @@ int main() {
 	}
 	
 }
-system("cls");
+system("cls");*/
 printf("--------[BookingSystem]--------\n");
 printf("     | a. Available seats    |\n");
 printf("     | b. Arrange for you    |\n");
 printf("     | c. Choose by yourself |\n");
 printf("     | d. Exit               |\n");
-while(1){
-	scanf("%c",&word);
-	if(word=='a'){
-		for(i=0;i<9;i++){
+printf(" ------------------------------\n");
+	for(i=0;i<9;i++){
 			for(j=0;j<9;j++){
 				seat[i][j]='-';
 			}
 		}
-		srand(time(NULL));
 		while(reserv<10){
 		int row=rand()%9;
 		int cul=rand()%9;
-	if (seat[row][cul] == '-') { 
+		if (seat[row][cul] == '-') { 
                 seat[row][cul] = '*';
-                reserv++;
+                reserv++;}}
+while(1){
+	scanf("%c",&word);
+	
+	
+	if(word=='a'||word=='A'){
+		for(i=0;i<9;i++){
+			for(j=0;j<9;j++){
+				printf("%c",seat[i][j]);
+	
+
 	}
+			printf("\n");
+	}
+
+	}
+	if(word=='b'||word=='B'){
+	printf("請輸入人數");
+	scanf("%d",&namber);
+	if (namber < 1 || namber > 4) {
+    printf("人數應在 1 到 4 之間。\n");
+    continue;
+}
+	srand(time(NULL));
+	while(1){
+	int row=rand()%9;
+	int cul=rand()%9;
+	if (namber == 4) {
+            
+            if (cul < 7 && seat[row][cul] == '-' && seat[row][cul + 1] == '-' && seat[row + 1][cul] == '-' && seat[row + 1][cul + 1] == '-') {
+                seat[row][cul] = '@';
+                seat[row][cul + 1] = '@';
+                seat[row + 1][cul] = '@';
+                seat[row + 1][cul + 1] = '@';
+                break;
+            }     continue;
+        }
+	for(j=0;j<namber;j++){
+	if(seat[row][cul+j]!='-'){
+		canseat=0;
+		break;}	}
+	if(canseat==1){
+			for(j=0;j<namber;j++){
+				seat[row][cul+j]='@';
+			}
+			}break;
+			
 		
-	}
+			}
 	for(i=0;i<9;i++){
 			for(j=0;j<9;j++){
 				printf("%c",seat[i][j]);
+	}printf("\n");
 	}
-	printf("\n");
+	while(1){
+			
+	printf("是否滿意座位(y/n)");
+	scanf("%s",&seatcarreat);
+	if(seatcarreat=='y'||seatcarreat=='Y'){
+	for(i=0;i<9;i++){
+			for(j=0;j<9;j++){
+				if(seat[i][j]=='@'){
+					seat[i][j]='*';
+				}
 	}
-
+}break;}else if(seatcarreat=='n'||seatcarreat=='N'){for (i = 0; i < 9; i++) {
+        for (j = 0; j < 9; j++) {
+            if (seat[i][j] == '@') {
+                seat[i][j] = '-';
+}}}
+break;
+	}else{printf("錯誤\n");
 }
-}}
+
+}}}return 0;
+}
+
 
