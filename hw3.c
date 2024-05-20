@@ -59,6 +59,7 @@ while(1){
 	}
 
 	}
+	//b
 	if(word=='b'||word=='B'){
 	printf("請輸入人數");
 	scanf("%d",&namber);
@@ -117,7 +118,54 @@ break;
 	}else{printf("錯誤\n");
 }
 
-}}}return 0;
+}}
+//c
+if(word=='c'||word=='C'){
+int chrow,chcul;
+char bash;
+printf("請輸入幾行幾列?-?\n");
+while(1){
+	
+scanf("%d%c%d",&chrow,&bash,&chcul);
+if(chrow<1||chrow>9||chcul<1||chcul>9||bash!='-'){
+	printf("\n錯誤格式\n");
+	break;
+	continue;
 }
+if (seat[chrow-1][chcul-1] == '@'||seat[chrow-1][chcul-1] =='*') {
+            printf("座位 %d-%d 已經被選擇。\n", chrow, chcul);
+            continue;
+}
+ seat[chrow-1][chcul-1] = '@';
+ for ( i = 0; i < 9; i++) {
+        for ( j = 0; j < 9; j++) {
+            printf("%c", seat[i][j]);
+        }
+        printf("\n");
+    }
+    while(1){
+	printf("是否保存y/n\n");
+    scanf(" %c",&seatcarreat);
+	if(seatcarreat=='y'||seatcarreat=='Y'){
+	for(i=0;i<9;i++){
+			for(j=0;j<9;j++){
+				if(seat[i][j]=='@'){
+					seat[i][j]='*';
+				}
+	}
+}
+break;
+}else if(seatcarreat=='n'||seatcarreat=='N'){for (i = 0; i < 9; i++) {
+        for (j = 0; j < 9; j++) {
+            if (seat[i][j] == '@') {
+                seat[i][j] = '-';
+}}}
+break;
+	}else{printf("錯誤\n");
+}
+  }break;}
+    
+}
+}return 0;}
 
 
