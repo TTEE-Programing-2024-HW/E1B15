@@ -19,6 +19,7 @@ int main() {
 		break;
 	}
 	printf("±K½X¿ù»~%d¦¸\n",i);
+	system("cls");
 }
 }
 
