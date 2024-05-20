@@ -19,7 +19,14 @@ int main() {
 		break;
 	}
 	printf("±K½X¿ù»~%d¦¸\n",i);
-	system("cls");
+	
+	
 }
+system("cls");
+printf("--------[BookingSystem]--------\n");
+printf("     | a. Available seats    |\n");
+printf("     | b. Arrange for you    |\n");
+printf("     | c. Choose by yourself |\n");
+printf("     | d. Exit               |\n");
 }
 
