@@ -2,7 +2,7 @@
 #include<stdlib.h>
 
 int main() {
-    int i,j,password=2024,password1;
+    int i,j,password=2024,password1,reserv=0;
     char word;
     char seat[9][9];
     printf("   /\\_/\\  \n");
@@ -20,7 +20,9 @@ int main() {
 		break;
 	}
 	printf("±K½X¿ù»~%d¦¸\n",i);
-	
+	if(i==3){
+		return 0;
+	}
 	
 }
 system("cls");
@@ -30,19 +32,30 @@ printf("     | b. Arrange for you    |\n");
 printf("     | c. Choose by yourself |\n");
 printf("     | d. Exit               |\n");
 while(1){
-	scanf("%s",&word);
+	scanf("%c",&word);
 	if(word=='a'){
 		for(i=0;i<9;i++){
 			for(j=0;j<9;j++){
 				seat[i][j]='-';
 			}
 		}
-		for(i=0;i<9;i++){
+		srand(time(NULL));
+		while(reserv<10){
+		int row=rand()%9;
+		int cul=rand()%9;
+	if (seat[row][cul] == '-') { 
+                seat[row][cul] = '*';
+                reserv++;
+	}
+		
+	}
+	for(i=0;i<9;i++){
 			for(j=0;j<9;j++){
 				printf("%c",seat[i][j]);
-	}printf("\n");
 	}
+	printf("\n");
 	}
+
 }
-}
+}}
 
