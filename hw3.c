@@ -6,7 +6,7 @@ int main() {
     char word;
     char seat[9][9];
     srand(time(NULL));
-    /*printf("   /\\_/\\  \n");
+    printf("   /\\_/\\  \n");
     printf("  / o o \\ \n");
     printf(" (   \"   )\n");
     printf("  \\~(*)~/ \n");
@@ -26,7 +26,7 @@ int main() {
 	}
 	
 }
-system("cls");*/
+system("cls");
 
 	for(i=0;i<9;i++){
 			for(j=0;j<9;j++){
