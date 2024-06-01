@@ -9,7 +9,7 @@ int main(void) {
     	int math;
     	int ph;
     	int en;
-    	
+    	float sum;
 	};
 	struct student students[10];
     /*printf("   /\\_/\\  \n");
@@ -42,25 +42,35 @@ system("cls");*/
 	printf("| e. Exit system                |\n");
 	printf("------------------------------------\n");
 	scanf(" %c",&chs);
+	//a
 	if(chs=='a'||chs=='A'){
 	while(1){
 	printf("請輸入整數5~10\n");
 	scanf("%d",&n);
-	if(n>=5&&n<=10){
+	if(n>=1&&n<=10){
 		break;
 	}
 	} 
 	for(i=0;i<n;i++){
 	printf("第%d名",i+1);
 	scanf("%s %d %d %d %d",students[i].name,&students[i].id,&students[i].math,&students[i].ph,&students[i].en);	
+	students[i].sum=students[i].math+students[i].ph+students[i].en;
 	if(students[i].id>999999||students[i].math<0||students[i].math>100||students[i].ph<0||students[i].ph>100||students[i].en<0||students[i].en>100){
 	system("cls");
-	printf("輸入錯誤");
+	printf("輸入錯誤\n");
 	i--;
 	continue;
 	}
-	printf("%s %d %d %d %d\n",students[i].name,students[i].id,students[i].math,students[i].ph,students[i].en);
-	}
 	}
 }
+//b
+if(chs=='b'||chs=='B'){
+	printf("姓名 id 數學 物理 英文 平均\n");
+	for(i=0;i<n;i++){
+		printf("%s    %d  %d    %d    %d    %.1f\n", students[i].name, students[i].id, students[i].math, students[i].ph, students[i].en,students[i].sum/3);
+	}
+	getchar();
+	getchar();
+	system("cls");
 }
+}}
