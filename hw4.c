@@ -1,8 +1,10 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include <string.h>
 
 int main(void) {
     int i,password,chs,n;
+    char searchname;
     struct student{
     	char name[10];
 		int id;
@@ -52,7 +54,7 @@ system("cls");*/
 	}
 	} 
 	for(i=0;i<n;i++){
-	printf("第%d名",i+1);
+	printf("第%d名\n",i+1);
 	scanf("%s %d %d %d %d",students[i].name,&students[i].id,&students[i].math,&students[i].ph,&students[i].en);	
 	students[i].sum=students[i].math+students[i].ph+students[i].en;
 	if(students[i].id>999999||students[i].math<0||students[i].math>100||students[i].ph<0||students[i].ph>100||students[i].en<0||students[i].en>100){
@@ -72,5 +74,24 @@ if(chs=='b'||chs=='B'){
 	getchar();
 	getchar();
 	system("cls");
+}
+//c
+if(chs=='c'||chs=='C'){
+	system("cls");
+	int found=0;
+	printf("請輸入要查詢的學生姓名");
+	scanf("%s",&searchname);
+	getchar();
+	for(i=0;i<n;i++){
+	if (strcmp(students[i].name, searchname) == 0){
+	printf("%s %d %d %d %d %.1f\n", students[i].name, students[i].id, students[i].math, students[i].ph, students[i].en,students[i].sum/3);
+	found++;
+	break;
+	}
+	
+	}
+	if(found==0){
+		printf("未找到\n");
+	}	
 }
 }}
