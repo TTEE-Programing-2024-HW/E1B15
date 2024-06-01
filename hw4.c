@@ -3,8 +3,8 @@
 #include <string.h>
 
 int main(void) {
-    int i,password,chs,n;
-    char searchname;
+    int i,j,password,chs,n;
+    char searchname[10];
     struct student{
     	char name[10];
 		int id;
@@ -80,7 +80,7 @@ if(chs=='c'||chs=='C'){
 	system("cls");
 	int found=0;
 	printf("請輸入要查詢的學生姓名");
-	scanf("%s",&searchname);
+	scanf("%s",searchname);
 	getchar();
 	for(i=0;i<n;i++){
 	if (strcmp(students[i].name, searchname) == 0){
@@ -93,5 +93,25 @@ if(chs=='c'||chs=='C'){
 	if(found==0){
 		printf("未找到\n");
 	}	
+}
+//d
+if(chs=='d'||chs=='D'){
+system("cls");
+struct student temp;
+	for(i=0;i<n-1;i++){
+		for(j=0;j<n-i-1;j++){
+			if(students[j].sum<students[j+1].sum){
+				temp= students[j];
+				students[j]=students[j+1];
+				students[j+1]=temp;
+			}
+		}
+	}
+	for(i=0;i<n;i++){
+		printf("%s %d %d %d %d %.1f\n", students[i].name, students[i].id, students[i].math, students[i].ph, students[i].en,students[i].sum/3);
+	}
+	getchar();
+	getchar();
+	system("cls");
 }
 }}
