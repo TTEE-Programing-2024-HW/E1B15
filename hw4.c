@@ -49,7 +49,7 @@ system("cls");*/
 	while(1){
 	printf("請輸入整數5~10\n");
 	scanf("%d",&n);
-	if(n>=1&&n<=10){
+	if(n>=5&&n<=10){
 		break;
 	}
 	} 
@@ -92,7 +92,9 @@ if(chs=='c'||chs=='C'){
 	}
 	if(found==0){
 		printf("未找到\n");
-	}	
+	}
+		getchar();
+	system("cls");
 }
 //d
 if(chs=='d'||chs=='D'){
@@ -114,4 +116,21 @@ struct student temp;
 	getchar();
 	system("cls");
 }
-}}
+if(chs=='e'||chs=='E'){
+	char yn;
+	printf("continue(y/n)\n");
+	while(1){
+		scanf(" %c",&yn);
+	if(yn=='y'||yn=='Y'){
+		return 0;
+	}else if(yn=='n'||yn=='N'){
+		break;
+		
+	}else{
+		printf("錯誤\n");
+		continue;
+	}
+	}
+}
+}return 0;
+}
