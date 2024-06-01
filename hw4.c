@@ -14,7 +14,7 @@ int main(void) {
     	float sum;
 	};
 	struct student students[10];
-    /*printf("   /\\_/\\  \n");
+    printf("   /\\_/\\  \n");
     printf("  / o o \\ \n");
     printf(" (   \"   )\n");
     printf("  \\~(*)~/ \n");
@@ -34,7 +34,7 @@ int main(void) {
 	}
 	
 }
-system("cls");*/
+system("cls");
  while(1){
 	printf("--------[grade System]--------------\n");
 	printf("| a. Enter student grades       |\n");
@@ -134,3 +134,4 @@ if(chs=='e'||chs=='E'){
 }
 }return 0;
 }
+//這次作業我認為讓我對字串比對熟悉了一點，還有分數高到低的巢狀迴圈也理解了，以及結構要怎麼設定等等更加熟悉 
